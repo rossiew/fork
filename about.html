@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Біз туралы</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: sans-serif;
+        }
+
+        header {
+            margin: 50px 30px;
+            position: relative;
+        }
+
+        svg {
+            width: 50%;
+            height: 10%;
+            position: relative;
+            right: 150px;
+            margin-top: -45px;
+        }
+
+        path {
+            fill: none;
+            stroke: rgb(58, 121, 167);
+            stroke-width: 7;
+        }
+
+        .all_about {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .about_text p {
+            margin: 0;
+            padding-bottom: 20px;
+            padding: 20px;
+        }
+
+        .about_image img {
+            padding: 20px;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Біздің компания туралы</h1>
+
+    </header>
+    <svg viewBox="0 0 1000 200">
+        <path id="road" d="M0,100 C100,120 200,0 300,100 S500,200 700,100 S900,0 1000,100 " />
+    </svg>
+
+
+    <section class="all_about">
+        <div class="about_text">
+            <p>ЖИЛСЕРВИС – 5 жылдан астам тәжірибесі бар кәсіби жылжымайтын мүлік агенттігі. Біз қызметкерлеріміздің
+                көп жылдық тәжірибесіне сүйене отырып, кез келген күрделіліктегі тапсырмаларды орындаймыз.</p>
+
+            <p>Компания жұмысындағы негізгі қағидаттар: тиімділік, адалдық және құқықтық сауаттылық пен мәміленің
+                тазалығының кепілі.</p>
+
+            <p>Біздің мамандар жылжымайтын мүлікті сату, сатып алу, жалға беру, сатуға құжаттарды дайындау, ипотекаға
+                барлық қажетті құжаттарды жинау, жылжымайтын мүлікті қайта жоспарлауды заңдастыру бойынша көмек
+                көрсетеді.</p>
+
+            <p>ЖИЛСЕРВИС негізгі немесе қосалқы жылжымайтын мүліктің барлық сегменттерінде, қоңырау шалудан
+                транзакцияны жағымды бонустармен аяқтауға дейін кешенді қызметтерді ұсынады.</p>
+        </div>
+
+        <div class="about_image">
+            <img src="https://img.freepik.com/free-photo/view-3d-graphic-apartment-complex_23-2150849049.jpg?t=st=1714326517~exp=1714330117~hmac=7e6dbc3b3188a12fc43fcf90dff943b2ed4885d0a905d88d41f2706a170ccf55&w=740"
+                width="400px">
+        </div>
+    </section>
+
+    <footer>
+        <p style="text-align: center; background-color: whitesmoke; margin: 0;padding: 0;">© Copyright ЖИЛСЕРВИС Барлық
+            құқықтар қорғалған.</p>
+
+    </footer>
+
+
+
+    <script>
+        window.onload = function () {
+            const road = document.getElementById('road');
+            const length = road.getTotalLength();
+            road.style.transition = road.style.WebkitTransition = 'none';
+            road.style.strokeDasharray = length + ' ' + length;
+            road.style.strokeDashoffset = length;
+            road.getBoundingClientRect();
+            road.style.transition = road.style.WebkitTransition = 'stroke-dashoffset 5s ease-in-out';
+            road.style.strokeDashoffset = '0';
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хабарласу</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            color: #000000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header svg {
+            width: 30%;
+            height: 10%;
+            position: relative;
+            margin-top: -45px;
+        }
+
+        header path {
+            fill: none;
+            stroke: rgb(58, 121, 167);
+            stroke-width: 2;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #contactForm {
+            margin: 10%;
+            padding: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgb(58, 121, 167);
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 70px;
+
+            margin-bottom: 90px;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(58, 121, 167);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 70%;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(2, 36, 61);
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .contact_container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+
+        .contacts {
+            padding: 10px;
+        }
+
+        .contacts h1 {
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Хабарласу</h1>
+        <svg viewBox="0 0 1000 200">
+            <path id="road" d="M0,100 C100,120 200,0 300,100 S500,200 700,100 S900,0 1000,100 " />
+        </svg>
+    </header>
+
+    <div class="container">
+
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.259103107815!2d-74.00594148468047!3d40.712783779326276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2596cebc13b27%3A0x539793a759b1449c!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sca!4v1635291673249!5m2!1sen!2sca"
+                allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="contact_container">
+            <form id="contactForm">
+                <label for="name">Есім:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Хабар:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <input type="submit" value="Send Message">
+            </form>
+
+
+
+            <div class="contacts">
+                <div>
+                    <h1><ion-icon name="chatbubble-outline"></ion-icon> Хабарласу </h1>
+                    <p>Email: contact@example.com</p>
+                    <p>Телефон :+7 707 977 3246</p>
+                </div>
+
+                <div>
+                    <h1><ion-icon name="location-outline"></ion-icon> Мекен-жай</h1>
+                    <p>Бостандық ауданы, Торайғырова 53</p>
+                </div>
+                <div>
+                    <h1><ion-icon name="share-social-outline"></ion-icon> Әлеуметтік желілер</h1>
+                    <p>
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                        <ion-icon name="logo-twitter"></ion-icon>
+                        <ion-icon name="logo-instagram"></ion-icon>
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </p>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <br><br><br>
+
+    <footer>
+
+    <p style="text-align: center; background-color: whitesmoke; margin: 0;padding: 0;">© Copyright ЖИЛСЕРВИС Барлық құқықтар қорғалған.</p>
+     
+    </footer>
+
+
+    <script>
+        // for animation under the "Contact Us"
+        window.onload = function () {
+            const road = document.getElementById('road');
+            const length = road.getTotalLength();
+            road.style.transition = road.style.WebkitTransition = 'none';
+            road.style.strokeDasharray = length + ' ' + length;
+            road.style.strokeDashoffset = length;
+            road.getBoundingClientRect();
+            road.style.transition = road.style.WebkitTransition = 'stroke-dashoffset 5s ease-in-out';
+            road.style.strokeDashoffset = '0';
+        };
+
+
+        // for email
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Сәтті жіберілді!');
+            this.reset();
+        });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

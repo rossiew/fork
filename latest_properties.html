@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Біздің жұмыстар</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        header h1 {
+            font-size: 40px;
+            text-align: center;
+            color: rgb(58, 121, 167);
+        }
+        svg {
+            width: 50%;
+            height: 10%;
+       
+            margin-top: -45px;
+        }
+
+        path {
+            fill: none;
+            stroke: rgb(58, 121, 167);
+            stroke-width: 7;
+        }
+
+        .text h1,
+        p {
+            text-align: center;
+        }
+
+        .images {
+            margin: 10px 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .images img {
+            border-radius: 10px;
+            width: 380px;
+            height: 300px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1> Our Amazing Works</h1>
+        <svg viewBox="0 0 1000 200">
+            <path id="road" d="M0,100 C100,120 200,0 300,100 S500,200 700,100 S900,0 1000,100 " />
+        </svg>
+    </header>
+
+    <div class="text">
+        <h1>
+            Біздің Жұмыстарымыз
+
+        </h1>
+        <p>VIP үйлері</p>
+    </div>
+
+
+    <section class="images">
+        <img src="https://pro-dachnikov.com/uploads/posts/2021-09/1632881767_58-p-dom-osobnyak-foto-60.jpg">
+        <img
+            src="https://loveincorporated.blob.core.windows.net/contentimages/largesize/41f3f346-5c12-437e-b65b-eb0907c8ad27-ghoulish-gothic-homes-gothic-mansion.jpg">
+        <img src="https://i.pinimg.com/originals/f0/58/b6/f058b6e8ba55c12243e5dfb37535d6b9.jpg">
+        <img src="https://i.pinimg.com/originals/6b/21/4d/6b214d752d6d6602b8e6f3ea851ab689.jpg">
+        <img src="https://s1.1zoom.ru/big7/916/USA_Houses_Villa_Newport_485965.jpg">
+        <img src="https://million-wallpapers.ru/wallpapers/2/0/485953945278536/dem-ona-jdeg-t-b-zho-bassejn.jpg">
+        <img
+            src="https://wallup.net/wp-content/uploads/2019/09/893197-usa-houses-mansion-night-newport-beach-cities.jpg">
+        <img src="https://trumpwallpapers.com/wp-content/uploads/House-Wallpaper-27-3840x2200-1-scaled.jpg">
+        <img src="https://i.pinimg.com/originals/14/75/c2/1475c2606912ce5eb71c9f7aaa070ba7.jpg">
+
+    </section>
+
+    <br><br><br>
+    <footer>
+
+        <a href="./contact.html">
+            Егер сізге біздің топтамалар ұнаса, бізге хабарласыңыз &rarr;
+        </a>
+    </footer>
+    <br>
+
+    <script>
+           window.onload = function () {
+            const road = document.getElementById('road');
+            const length = road.getTotalLength();
+            road.style.transition = road.style.WebkitTransition = 'none';
+            road.style.strokeDasharray = length + ' ' + length;
+            road.style.strokeDashoffset = length;
+            road.getBoundingClientRect();
+            road.style.transition = road.style.WebkitTransition = 'stroke-dashoffset 5s ease-in-out';
+            road.style.strokeDashoffset = '0';
+        };
+    </script>
+</body>
+
+</html>
